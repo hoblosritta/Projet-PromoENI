@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PromoENI - Acceuil</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+
+        <img src="../images/logo.png" alt="Logo ENI" title="Logo ENI">
+
+        <h1 class="site-title">Promo D2WM 09-26</h1>
+
+        <nav>
+            <a href="index.html">Acceuil</a>
+            <a href="préférences.html">Préférences</a>
+            <a href="carte.html">Carte</a>
+            <a href="information.html">Informations</a>
+        </nav>
+    </header>
+
+        
+        <form>
+            <fieldset>
+                <legend>Type d'affichage</legend>
+
+                <input type="radio" id="Liste" name="affichage" value="liste" checked>
+                <label for="Liste">Liste</label>
+
+                <input type="radio" id="Cartes" name="affichage" value="cartes">
+                <label for="Cartes">Cartes</label>
+            </fieldset>
+        </form>
+
+    <main>
+
+        <h2 id="titreListe">Liste des apprenants</h2>
+
+        <div id="conteneurTableau" class="table-responsive">
+            <table class="table-apprenants">
+                <thead>
+                    <tr>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Prénom</th>
+                        <th scope="col">Ville</th>
+                        <th scope="col">Détail</th>
+                    </tr>
+                </thead>
+                <tbody id="listeApprenants"></tbody>
+            </table>
+        </div>
+
+        <section id="cartesApprenants" class="grille-apprenants" hidden>
+        </section>
+
+    </main>
+
+    <div id="modalApprenant" class="modal-apprenant" hidden>
+
+        <h2 id="titreModal">Fiche de l'apprenant</h2>
+
+        <div class="contenu-identite-modal">
+            <img id="avatarModal" class="avatar-modal" src="../images/avatar.png" alt="Avatar par défaut">
+
+            <dl class="informations-modal">
+                <div>
+                    <dt>Nom</dt>
+                    <dd id="nomModal"></dd>
+                
+                    <dt>Prénom</dt>
+                    <dd id="prenomModal"></dd>
+                </div>
+                <div>
+                    <dt>Ville</dt>
+                    <dd id="villeModal"></dd>
+                </div>
+            </dl>
+        </div>
+
+        <section class="anecdote-modal">
+            <h3 id="titreAnecdoteModal">Anecdote sur l'apprenant</h3>
+            <p id="texteAnecdoteModal"></p>
+        </section>
+    </div>
+
+     <script src="../js/index.js"></script>
+     <script src="../js/theme.js"></script>
+
+</body>
+</html>

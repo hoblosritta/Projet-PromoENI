@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PromoENI - Préférences</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+
+        <img src="../images/logo.png" alt="Logo ENI" title="Logo ENI">
+
+         <h1 class="site-title">Promo D2WM 09-26</h1>
+
+        <nav>
+            <a href="index.html">Acceuil</a>
+            <a href="préférences.html">Préférences</a>
+            <a href="carte.html">Carte</a>
+            <a href="information.html">Informations</a>
+        </nav>
+    </header>
+    
+    <main>
+        <h1>Préférences du site</h1>
+
+        
+        <form id="formPreferences">
+            <div class="preference-row">
+                <label for="theme">Thème du site</label>
+
+                <select name="theme" id="theme">
+                    <option value="clair" selected>Clair</option>
+                    <option value="sombre">Sombre</option>
+                </select>
+            </div>
+
+            <fieldset class="preference-row">
+                <legend>Type d'affichage</legend>
+
+                <div class="preference-choices">
+                    <div>
+                        <input type="radio" id="Liste" name="affichage"
+                            value="liste" checked>
+                        <label for="Liste">Liste (Table)</label>
+                    </div>
+
+                    <div>
+                        <input type="radio" id="Cartes" name="affichage"
+                            value="cartes">
+                        <label for="Cartes">Cartes (Grid)</label>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+
+    </main>  
+
+    <footer class="footer-preferences">
+
+        <a class="lien-navigation" href="index.html">Retour à la page d’accueil</a>
+
+        <button id="boutonEnregistrer" class="lien-navigation" type="button">Enregistrer</button>
+
+    </footer>
+
+    <script src="../js/préférences.js"></script>
+    <script src="../js/theme.js"></script>
+</body>
+</html>

@@ -1,0 +1,710 @@
+
+/*-----------------------------------GENERALE----------------------------------------------*/
+
+
+/* Les dimensions incluent les bordures et les marges internes */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Les images restent adaptées à leur conteneur */
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Le focus reste visible lors de la navigation au clavier */
+
+:focus {
+    outline: 3px solid #6D5AE6;
+    outline-offset: 3px;
+}
+
+/* Mise en forme générale du site */
+
+body {
+    margin: 0;
+    background-color: #F7F7FF;
+    color: #1F2937;
+    font-family: "Nunito Sans", sans-serif;
+    line-height: 1.6;
+}
+
+
+/* Titres principaux */
+
+
+.site-title {
+    color: #172554;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    font-weight: 800;
+    text-align: center;
+    max-width: 100%;
+}
+
+
+@media (max-width: 40rem) {
+    .site-title {
+        font-size: 2rem;
+    }
+}
+
+h1 {
+    color: #172554;
+    font-size: 2rem;
+    line-height: 1.3;
+    font-weight: 800;
+    text-align: center;
+    max-width: 100%;
+}
+
+h2 {
+    color: #172554;
+    font-size: 1.5rem;
+    line-height: 1.4;
+    font-weight: 700;
+}
+
+main > h2 {
+    margin-left: 0.75rem;
+}
+
+/* En-tête du site */
+header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #EDE9FE;
+}
+
+/* Logo ENI */
+header img {
+    display: block;
+    width: 5rem;
+    height: auto;
+    flex-shrink: 0;
+}
+
+/* Titre du site */
+header .site-title {
+    margin: 0;
+    flex: 1 1 12rem;
+    text-align: center;
+}
+
+/* Liens du menu et lien de retour présentés comme des boutons */
+header nav a,
+.lien-navigation {
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0.625rem 1rem;
+    color: #172554;
+    background-color: #FFFFFF;
+    border: 1px solid #172554;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(23, 37, 84, 0.15);
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.2s ease,
+                color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+/* Même effet au survol pour les deux types de liens */
+header nav a:hover,
+.lien-navigation:hover {
+    background-color: #172554;
+    color: #FFFFFF;
+    box-shadow: 0 4px 8px rgba(23, 37, 84, 0.25);
+}
+
+/* Même contour de focus pour la navigation au clavier */
+header nav a:focus,
+.lien-navigation:focus {
+    outline: 3px solid #6D5AE6;
+    outline-offset: 3px;
+}
+
+
+/*----------------------------------------PAGE ACCEUIL-------------------------------------*/
+
+
+/* Zone du choix d'affichage */
+form {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.5rem 1rem;
+}
+
+/* Groupe sans bordure */
+form fieldset {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0;
+    border: none;
+    min-width: 0;
+}
+
+/* Intitulé du groupe */
+form legend {
+    float: left;
+    width: auto;
+    margin-right: 0.25rem;
+    padding: 0;
+    color: #172554;
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+/* Libellés */
+form label {
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+/* Focus visible au clavier */
+form input[type="radio"]:focus {
+    outline: 3px solid #6D5AE6;
+    outline-offset: 3px;
+}
+
+
+/* Formulaire des préférences */
+#formPreferences {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: min(100% - 2rem, 32rem);
+    margin: 1.5rem auto;
+}
+
+/* Chaque rubrique possède deux colonnes identiques */
+#formPreferences .preference-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    column-gap: 1rem;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+/* Intitulés alignés à gauche */
+#formPreferences .preference-row > label,
+#formPreferences .preference-row > legend {
+    grid-column: 1;
+    margin: 0;
+    padding: 0;
+    color: #172554;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+/* Le menu et les choix occupent la même colonne */
+#formPreferences select,
+#formPreferences .preference-choices {
+    grid-column: 2;
+    min-width: 0;
+}
+
+/* Espacement des choix radio */
+#formPreferences .preference-choices {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+#formPreferences label {
+    cursor: pointer;
+}
+
+/* Focus visible au clavier */
+#formPreferences input:focus,
+#formPreferences select:focus {
+    outline: 3px solid #6D5AE6;
+    outline-offset: 3px;
+}
+
+/* Sur les petits écrans, conserver une mise en page lisible */
+@media (max-width: 30rem) {
+    #formPreferences .preference-row {
+        grid-template-columns: 1fr;
+        row-gap: 0.5rem;
+    }
+
+    #formPreferences .preference-row > label,
+    #formPreferences .preference-row > legend,
+    #formPreferences select,
+    #formPreferences .preference-choices {
+        grid-column: 1;
+    }
+}
+
+/* Encadre le tableau et lui ajoute une ombre douce */
+.table-responsive {
+    width: 50%;
+    border: 2px solid #7565D9;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.25rem 0.75rem rgba(23, 37, 84, 0.16);
+    overflow: hidden;
+}
+
+/* Fait remplir au tableau son conteneur */
+.table-apprenants {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+/* Aère le contenu et aligne le texte à gauche */
+.table-apprenants th,
+.table-apprenants td {
+    padding: 0.65rem 0.85rem;
+    text-align: left;
+}
+
+/* Sépare verticalement les colonnes avec une ombre discrète */
+.table-apprenants th + th,
+.table-apprenants td + td {
+    border-left: 1px solid rgba(23, 37, 84, 0.25);
+    box-shadow: inset 0.15rem 0 0.2rem rgba(23, 37, 84, 0.08);
+}
+
+/* Alterne les fonds des lignes sans ajouter de lignes horizontales */
+.table-apprenants tbody tr:nth-child(odd) {
+    background-color: #EDE9FE;
+}
+
+/* Garde une ligne claire entre deux lignes lavande */
+.table-apprenants tbody tr:nth-child(even) {
+    background-color: #F7F7FF;
+}
+
+/* Sur petit écran, le tableau prend toute la largeur disponible */
+@media (max-width: 48rem) {
+    .table-responsive {
+        width: 100%;
+    }
+}
+
+/* Cache la présentation qui n'est pas sélectionnée */
+#conteneurTableau[hidden],
+#cartesApprenants[hidden] {
+    display: none;
+}
+
+/* Affiche trois cartes par ligne */
+.grille-apprenants {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    box-sizing: border-box;
+}
+
+/* Donne à chaque apprenant la forme d'une petite carte */
+.carte-apprenant {
+    min-width: 0;
+    padding: 0.75rem;
+    color: #1F2937;
+    background-color: #F7F7FF;
+    border: 2px solid #7565D9;
+    border-radius: 1rem;
+    box-shadow: 0 0.2rem 0.5rem rgba(23, 37, 84, 0.12);
+    text-align: center;
+}
+
+/* Réduit l'espace autour du nom et de la ville */
+.carte-apprenant h3,
+.carte-apprenant p {
+    margin: 0 0 0.4rem;
+}
+
+/* Présente le lien Détail comme un petit bouton */
+.carte-apprenant .lien-detail-carte {
+    display: inline-block;
+    padding: 0.25rem 0.55rem;
+    color: #172554;
+    border: 1px solid #7565D9;
+    border-radius: 0.35rem;
+    text-decoration: none;
+    box-shadow: 0 0.12rem 0.2rem rgba(23, 37, 84, 0.14);
+}
+
+/* Passe à trois cartes par ligne sur un écran plus étroit */
+@media (max-width: 42rem) {
+    .grille-apprenants {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/* Passe à deux cartes par ligne sur téléphone */
+@media (max-width: 28rem) {
+    .grille-apprenants {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* N'affiche qu'une carte par ligne sur un écran très étroit */
+@media (max-width: 20rem) {
+    .grille-apprenants {
+        grid-template-columns: 1fr;
+    }
+}
+
+/*-------------------------PAGE INFORMATIONS-----------------------------------------------*/
+
+/* Ajoute de l'espace autour du contenu de cette page uniquement */
+.page-informations {
+    padding: clamp(1rem, 3vw, 2rem);
+}
+
+[id="texteDescription"] {
+    font-style: italic;
+}
+
+/* Met les deux phrases en gras et réduit légèrement leur taille */
+.mise-en-avant-description {
+    font-weight: 800;
+    font-size: 0.9em;
+}
+
+/* Centre le titre et les deux informations générales */
+.page-informations > h1,
+.page-informations > p {
+    text-align: center;
+}
+
+/* Place les deux blocs côte à côte avec un espace égal entre eux */
+.contenu-informations {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    width: 100%;
+    max-width: 70rem;
+    margin: 2rem auto;
+}
+
+/* La section contient le titre et le cadre, sans dessiner elle-même de cadre */
+.bloc-information {
+    min-width: 0;
+}
+
+/* Place le titre au-dessus du cadre */
+.bloc-information h2 {
+    margin: 0 0 0.5rem;
+    color: #172554;
+}
+
+/* Encadre uniquement le contenu situé sous le titre */
+.cadre-information {
+    padding: 1rem;
+    background-color: #FFFFFF;
+    border: 2px solid #7565D9;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 10px rgba(23, 37, 84, 0.12);
+}
+
+/* Centre le lien de retour sous les deux blocs */
+.footer-informations {
+    display: flex;
+    justify-content: center;
+    padding: 0 1rem 1.5rem;
+}
+
+/* Empile les blocs quand l'écran est étroit */
+@media (max-width: 42rem) {
+    .contenu-informations {
+        grid-template-columns: 1fr;
+    }
+}
+
+/*--------------------------------------PAGE PREFERENCES-----------------------------------*/
+
+/* Centre les actions en bas de la page Préférences */
+.footer-preferences {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+}
+
+/* Utilise aussi les couleurs sombres pour les contrôles du navigateur */
+/* Assombrit le fond général et éclaircit le texte */
+html[data-theme="sombre"] body {
+    background-color: #111827;
+    color: #F3F4F6;
+}
+
+/* Éclaircit les titres et les intitulés qui avaient une couleur foncée fixe */
+html[data-theme="sombre"] h1,
+html[data-theme="sombre"] h2,
+html[data-theme="sombre"] .site-title,
+html[data-theme="sombre"] .bloc-information h2,
+html[data-theme="sombre"] #formPreferences .preference-row > label,
+html[data-theme="sombre"] #formPreferences .preference-row > legend,
+html[data-theme="sombre"] form legend {
+    color: #EDE9FE;
+}
+
+/* Donne un fond sombre à l'en-tête */
+html[data-theme="sombre"] header {
+    background-color: #1F2937;
+}
+
+/* Adapte les liens du menu et les boutons communs au fond sombre */
+html[data-theme="sombre"] header nav a,
+html[data-theme="sombre"] .lien-navigation {
+    color: #F9FAFB;
+    background-color: #312E81;
+    border-color: #A78BFA;
+}
+
+/* Garde un contraste visible au survol */
+html[data-theme="sombre"] header nav a:hover,
+html[data-theme="sombre"] .lien-navigation:hover {
+    color: #111827;
+    background-color: #A78BFA;
+}
+
+/* Éclaircit les liens ordinaires, comme ceux des ressources utiles */
+html[data-theme="sombre"] a:not(.lien-navigation):not(.lien-detail-carte) {
+    color: #C4B5FD;
+}
+
+/* Habille les cadres d'information et les cartes d'apprenants */
+html[data-theme="sombre"] .cadre-information,
+html[data-theme="sombre"] .carte-apprenant {
+    color: #F3F4F6;
+    background-color: #1F2937;
+    border-color: #8B7CF6;
+}
+
+/* Assombrit le cadre du tableau et ses lignes alternées */
+html[data-theme="sombre"] .table-responsive {
+    background-color: #1F2937;
+    border-color: #8B7CF6;
+}
+
+html[data-theme="sombre"] .table-apprenants tbody tr:nth-child(odd) {
+    color: #F3F4F6;
+    background-color: #374151;
+}
+
+html[data-theme="sombre"] .table-apprenants tbody tr:nth-child(even) {
+    color: #F3F4F6;
+    background-color: #1F2937;
+}
+
+/* Rend les séparations entre les colonnes visibles sur fond sombre */
+html[data-theme="sombre"] .table-apprenants th + th,
+html[data-theme="sombre"] .table-apprenants td + td {
+    border-left-color: rgba(203, 213, 225, 0.35);
+    box-shadow: inset 0.15rem 0 0.2rem rgba(0, 0, 0, 0.2);
+}
+
+/* Adapte le petit lien Détail dans les cartes */
+html[data-theme="sombre"] .carte-apprenant .lien-detail-carte {
+    color: #EDE9FE;
+    background-color: #312E81;
+    border-color: #A78BFA;
+}
+
+/* Assure la lisibilité du menu déroulant des préférences */
+html[data-theme="sombre"] #formPreferences select {
+    color: #F9FAFB;
+    background-color: #1F2937;
+    border: 1px solid #8B7CF6;
+}
+
+/*-------------------------------PAGE CARTE------------------------------------------------*/
+
+
+/* Centre la carte et adapte ses dimensions à l'écran */
+#map {
+    width: calc(100% - 2rem);
+    max-width: 60rem;
+    height: clamp(18rem, 60vh, 34rem);
+    margin: 2rem auto;
+    border: 2px solid #7565D9;
+    border-radius: 0.75rem;
+    overflow: hidden;
+}
+
+/* Agrandit les boutons de zoom pour faciliter leur utilisation au toucher */
+#map .leaflet-control-zoom a {
+    min-width: 44px;
+    min-height: 44px;
+    line-height: 44px;
+    font-size: 1.4rem;
+}
+
+/* Rend visible le focus quand on navigue au clavier */
+#map:focus,
+#map .leaflet-control a:focus {
+    outline: 3px solid #6D5AE6;
+    outline-offset: 3px;
+}
+
+
+/*-----------------------------------MODAL----------------------------------*/
+
+/* Présente le bouton Détail du tableau comme un lien cliquable */
+.bouton-detail {
+    padding: 0.2rem 0;
+    color: #172554;
+    background: transparent;
+    border: 0;
+    font: inherit;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Souligne davantage le bouton Détail au survol */
+.bouton-detail:hover {
+    font-weight: 700;
+}
+
+/* Affiche la fiche au centre de la page */
+.modal-apprenant {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    width: min(90vw, 38rem);
+    max-width: calc(100vw - 1rem);
+    max-height: calc(100vh - 1rem);
+    margin: 0;
+    padding: 1rem;
+    color: #1F2937;
+    background-color: #FFFFFF;
+    border: 2px solid #7565D9;
+    border-radius: 0.75rem;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.25);
+    overflow-y: auto;
+}
+
+.modal-apprenant[hidden] {
+    display: none;
+}
+
+/* Place l'avatar à gauche et les informations à droite */
+.contenu-identite-modal {
+    display: grid;
+    grid-template-columns: 8rem 1fr;
+    align-items: start;
+    gap: 1.25rem;
+}
+
+/* Affiche l'avatar dans un cadre carré */
+.avatar-modal {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+    background-color: #EDE9FE;
+    border-radius: 0.5rem;
+}
+
+/* Organise les informations de l'apprenant en lignes */
+.informations-modal {
+    display: grid;
+    gap: 0.75rem;
+    margin: 0;
+}
+
+/* Aligne chaque intitulé avec sa valeur */
+.informations-modal div {
+    display: grid;
+    grid-template-columns: 5rem 1fr;
+    gap: 0.5rem;
+}
+
+/* Met en évidence les intitulés Nom, Prénom et Ville */
+.informations-modal dt,
+.anecdote-modal h3 {
+    color: #172554;
+    font-weight: 700;
+}
+
+/* Permet aux valeurs longues de revenir à la ligne */
+.informations-modal dd {
+    min-width: 0;
+    margin: 0;
+}
+
+/* Sépare l'anecdote des informations principales */
+.anecdote-modal {
+    margin-top: 1.25rem;
+}
+
+/* Encadre le texte de l'anecdote */
+.anecdote-modal p {
+    min-height: 5rem;
+    margin: 0;
+    padding: 1rem;
+    background-color: #F7F7FF;
+    border: 1px solid #7565D9;
+    border-radius: 0.5rem;
+}
+
+/* Adapte les couleurs du panneau au thème sombre */
+html[data-theme="sombre"] .modal-apprenant {
+    color: #F3F4F6;
+    background-color: #1F2937;
+    border-color: #8B7CF6;
+}
+
+/* Adapte les intitulés et le titre de l'anecdote au thème sombre */
+html[data-theme="sombre"] .informations-modal dt,
+html[data-theme="sombre"] .anecdote-modal h3 {
+    color: #EDE9FE;
+}
+
+/* Adapte le cadre de l'anecdote au thème sombre */
+html[data-theme="sombre"] .anecdote-modal p {
+    background-color: #111827;
+    border-color: #8B7CF6;
+}
+
+/* Réduit la largeur de l'avatar sur les petits écrans */
+@media (max-width: 30rem) {
+    .contenu-identite-modal {
+        grid-template-columns: 5.5rem 1fr;
+        gap: 0.75rem;
+    }
+
+    .informations-modal div {
+        grid-template-columns: 4.5rem 1fr;
+        gap: 0.35rem;
+    }
+}
+
+/* Empile l'avatar et les informations sur les écrans très étroits */
+@media (max-width: 22rem) {
+    .contenu-identite-modal {
+        grid-template-columns: 1fr;
+    }
+
+    .avatar-modal {
+        width: 7rem;
+    }
+}

@@ -1,0 +1,77 @@
+{
+  "apprenants" : [
+    {
+      "id" : 1,
+      "nom" : "LE CORRE",
+      "prenom" : "Simon",
+      "ville" : "La Rochelle",
+      "avatar" : "images/avatar.png",
+      "anecdotes" : "",
+      "coordonnees": {
+        "latitude" : 46.166672,
+        "longitude" : -1.150000
+      }
+    },
+    {
+      "id" : 2,
+      "nom" : "PIARDET",
+      "prenom" : "Gautier",
+      "ville": "Royan",
+      "avatar" : "images/avatar.png",
+      "anecdotes" : "",
+      "coordonnees": {
+        "latitude" : 45.633331,
+        "longitude" : -1.033330
+      }
+    },
+    {
+      "id" : 3,
+      "nom" : "PIOLI",
+      "prenom" : "Hélène",
+      "ville": "Parthenay",
+      "avatar" : "images/avatar.png",
+      "anecdotes" : "",
+      "coordonnees": {
+        "latitude" : 46.650002,
+        "longitude" : -0.250000
+      }
+    },
+    {
+      "id" : 4,
+      "nom" : "MARTIN ROY",
+      "prenom" : "Raphaël",
+      "ville": "Saint-Saturnin-du-Bois",
+      "avatar" : "images/avatar.png",
+      "anecdotes" : "",
+      "coordonnees": {
+        "latitude" : 46.133331,
+        "longitude" : -0.666670
+      }
+    },
+    {
+      "id" : 5,
+      "nom" : "GUILLET",
+      "prenom" : "Alizée",
+      "ville": "Nantes",
+      "avatar" : "images/avatar.png",
+      "anecdotes" : "",
+      "coordonnees": {
+        "latitude": 47.2173,
+        "longitude": -1.5534
+      }
+    },
+    {
+      "id" : 6,
+      "nom" : "HOBLOS",
+      "prenom" : "Ritta",
+      "ville": "Etampes",
+      "avatar" : "images/avatar.png",
+      "anecdotes" : "",
+      "coordonnees": {
+        "latitude" : 48.433331,
+        "longitude" : 2.150000
+      }
+    }
+
+  ]
+}
