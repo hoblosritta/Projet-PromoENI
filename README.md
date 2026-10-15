@@ -1,2 +1,4 @@
 # Projet-PromoENI
 Premier projet de la formation ENI D2WM 09-26
+
+Site web réalisé pendant la semaine projet ENI.
