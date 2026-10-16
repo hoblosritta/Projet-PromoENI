@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PromoENI - Acceuil</title>
+    <title>PromoENI - Accueil</title>
     <link rel="stylesheet" href="../css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
@@ -14,48 +14,108 @@
 
         <img src="../images/logo.png" alt="Logo ENI" title="Logo ENI">
 
-        <h1 class="site-title">Promo D2WM 09-26</h1>
+        <h1 class="site-title">Chargement de la promotion...</h1>
 
-        <nav>
-            <a href="index.html">Acceuil</a>
+        <nav aria-label="Navigation principale">
+
+            <a href="index.html" aria-current="page">Accueil</a>
             <a href="préférences.html">Préférences</a>
             <a href="carte.html">Carte</a>
             <a href="information.html">Informations</a>
+
         </nav>
+
     </header>
 
-        
-        <form>
-            <fieldset>
-                <legend>Type d'affichage</legend>
+    <main class="page-content">
 
-                <input type="radio" id="Liste" name="affichage" value="liste" checked>
-                <label for="Liste">Liste</label>
+        <section class="hero" aria-labelledby="titre-introduction">
 
-                <input type="radio" id="Cartes" name="affichage" value="cartes">
-                <label for="Cartes">Cartes</label>
-            </fieldset>
-        </form>
+            <div class="hero-copy">
 
-    <main>
+                <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Promo ENI · Développement web</p>
 
-        <h2 id="titreListe">Liste des apprenants</h2>
+                <h2 id="titre-introduction">Une promo pleine d’idées.</h2>
 
-        <div id="conteneurTableau" class="table-responsive">
-            <table class="table-apprenants">
-                <thead>
-                    <tr>
-                        <th scope="col">Nom</th>
-                        <th scope="col">Prénom</th>
-                        <th scope="col">Ville</th>
-                        <th scope="col">Détail</th>
-                    </tr>
-                </thead>
-                <tbody id="listeApprenants"></tbody>
-            </table>
-        </div>
+                <p><span id="nombreIntro">6</span> apprenants, <span id="nombreParcours">6</span> parcours et une aventure commune autour du développement web.</p>
 
-        <section id="cartesApprenants" class="grille-apprenants" hidden>
+                <a class="hero-cta" href="#section-apprenants">Découvrir les apprenants <span aria-hidden="true">↘</span></a>
+
+            </div>
+
+            <div class="hero-art">
+
+                <span class="shape shape-orb" aria-hidden="true"></span>
+                <span class="shape shape-block" aria-hidden="true"></span>
+                <span class="shape shape-sun" aria-hidden="true"></span>
+                <span class="shape shape-diamond" aria-hidden="true"></span>
+
+                <div class="art-caption"><strong id="nombreApprenantsHero">06</strong><span>apprenants</span></div>
+
+            </div>
+
+        </section>
+
+        <section class="roster" id="section-apprenants" aria-labelledby="titreListe">
+
+            <div class="section-head">
+
+                <div>
+
+                    <p class="section-kicker">La promotion</p>
+
+                    <h2 id="titreListe">Les apprenants</h2>
+
+                </div>
+
+                <div class="roster-meta">
+
+                    <span class="count-pill"><span id="nombreProfils">6</span> profils</span>
+
+                    <form class="form-affichage">
+
+                        <fieldset class="view-toggle">
+
+                            <legend>Type d’affichage</legend>
+
+                            <input type="radio" id="Liste" name="affichage" value="liste" checked>
+                            <label for="Liste">Liste</label>
+
+                            <input type="radio" id="Cartes" name="affichage" value="cartes">
+                            <label for="Cartes">Cartes</label>
+
+                        </fieldset>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+            <div id="conteneurTableau" class="table-responsive">
+
+                <table class="table-apprenants">
+
+                    <thead>
+
+                        <tr>
+
+                            <th scope="col">Nom</th>
+                            <th scope="col">Prénom</th>
+                            <th scope="col">Ville</th>
+                            <th scope="col">Détail</th>
+
+                        </tr>
+                    </thead>
+
+                    <tbody id="listeApprenants"></tbody>
+
+                </table>
+
+            </div>
+
+            <section id="cartesApprenants" class="grille-apprenants" aria-label="Cartes des apprenants" hidden></section>
+
         </section>
 
     </main>
@@ -68,28 +128,45 @@
             <img id="avatarModal" class="avatar-modal" src="../images/avatar.png" alt="Avatar par défaut">
 
             <dl class="informations-modal">
+
                 <div>
+
                     <dt>Nom</dt>
                     <dd id="nomModal"></dd>
-                
+
                     <dt>Prénom</dt>
                     <dd id="prenomModal"></dd>
+
                 </div>
+
                 <div>
+
                     <dt>Ville</dt>
                     <dd id="villeModal"></dd>
+
                 </div>
+
             </dl>
+
         </div>
 
         <section class="anecdote-modal">
+
             <h3 id="titreAnecdoteModal">Anecdote sur l'apprenant</h3>
+
             <p id="texteAnecdoteModal"></p>
+
         </section>
+
     </div>
 
-     <script src="../js/index.js"></script>
-     <script src="../js/theme.js"></script>
+
+    <script src="../js/index.js"></script>
+    <script src="../js/theme.js"></script>
+    <script src="../js/promo.js"></script>
 
 </body>
+
 </html>
+
+

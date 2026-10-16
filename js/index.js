@@ -34,10 +34,10 @@ function obtenirCheminAvatar(cheminAvatar) {
 }
 
 // Ferme la fiche et remet le focus sur le bouton qui l'a ouverte.
-function fermerFiche() {
+function fermerFiche(restaurerFocus = true) {
     modalApprenant.setAttribute("hidden", "");
 
-    if (boutonDetailActif !== null) {
+    if (restaurerFocus && boutonDetailActif !== null) {
         boutonDetailActif.focus();
     }
 
@@ -118,6 +118,22 @@ function creerBoutonDetail(apprenant, classeSupplementaire) {
     return bouton;
 }
 
+document.addEventListener("click", function (event) {
+    if (modalApprenant.hasAttribute("hidden")) {
+        return;
+    }
+
+    if (
+        modalApprenant.contains(event.target) ||
+        event.target.closest(".bouton-detail") !== null
+    ) {
+        return;
+    }
+
+    fermerFiche(false);
+});
+
+
 // Restaure le choix enregistré, avec Liste par défaut.
 const affichageEnregistre = localStorage.getItem("affichage");
 let affichageInitial = "liste";
@@ -148,6 +164,17 @@ fetch("../promo.json")
         return response.json();
     })
     .then(function (data) {
+        const nombreApprenantsReels = data.apprenants.length;
+        document.getElementById("nombreIntro").innerText = nombreApprenantsReels;
+        document.getElementById("nombreParcours").innerText = nombreApprenantsReels;
+        document.getElementById("nombreProfils").innerText = nombreApprenantsReels;
+
+        let nombreApprenantsAvecZero = nombreApprenantsReels;
+
+        if (nombreApprenantsAvecZero < 10) {
+            nombreApprenantsAvecZero = "0" + nombreApprenantsAvecZero;
+        }
+        document.getElementById("nombreApprenantsHero").innerText = nombreApprenantsAvecZero;
         data.apprenants.forEach(function (apprenant) {
             // Ajoute une ligne au tableau.
             const ligne = document.createElement("tr");
@@ -190,3 +217,4 @@ fetch("../promo.json")
             cartesApprenants.appendChild(carte);
         });
     });
+

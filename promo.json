@@ -1,77 +1,91 @@
 {
-  "apprenants" : [
+  "nomPromo": "Promo ENI - Developpeur Web, Web mobile",
+
+  "dateDebutFormation": "2026-09-14",
+
+  "dateFinFormation": "2027-04-30",
+
+  "descriptionFormation": "Bienvenue sur le site de notre promotion !\n\nNous sommes une promotion de futurs développeurs web et web mobile réunis autour d'un objectif commun : apprendre, créer et évoluer dans le monde du numérique. Au fil de notre formation à l'ENI École Informatique, nous découvrons les nombreuses facettes du développement, de la création d'interfaces avec HTML et CSS à l'interactivité avec JavaScript, en passant par la programmation et le développement back-end.\n\nEntre apprentissages techniques, projets pratiques, entraide et découvertes, chacun avance à son rythme, partage ses idées et développe de nouvelles compétences. Cette aventure nous permet de relever des défis, de progresser ensemble et de transformer peu à peu nos connaissances en réalisations concrètes.\n\nL'ENI nous accompagne dans ce parcours professionnalisant, où la pratique occupe une place importante et où chaque projet est une nouvelle occasion d'apprendre.\n\nCe site est un aperçu de notre promotion : découvrez nos apprenants, explorez leurs profils et plongez dans l'univers de notre groupe !\n\nBienvenue dans notre univers, bienvenue chez PromoENI !",
+
+  "nombreApprenants": 6,
+
+  "apprenants": [
     {
-      "id" : 1,
-      "nom" : "LE CORRE",
-      "prenom" : "Simon",
-      "ville" : "La Rochelle",
-      "avatar" : "images/avatar.png",
-      "anecdotes" : "",
+      "id": 1,
+      "nom": "LE CORRE",
+      "prenom": "Simon",
+      "ville": "La Rochelle",
+      "avatar": "images/avatar.png",
+      "anecdotes": "",
       "coordonnees": {
-        "latitude" : 46.166672,
-        "longitude" : -1.150000
+        "latitude": 46.166672,
+        "longitude": -1.15
       }
     },
+
     {
-      "id" : 2,
-      "nom" : "PIARDET",
-      "prenom" : "Gautier",
+      "id": 2,
+      "nom": "PIARDET",
+      "prenom": "Gautier",
       "ville": "Royan",
-      "avatar" : "images/avatar.png",
-      "anecdotes" : "",
+      "avatar": "images/avatar.png",
+      "anecdotes": "",
       "coordonnees": {
-        "latitude" : 45.633331,
-        "longitude" : -1.033330
+        "latitude": 45.633331,
+        "longitude": -1.03333
       }
     },
+
     {
-      "id" : 3,
-      "nom" : "PIOLI",
-      "prenom" : "Hélène",
+      "id": 3,
+      "nom": "PIOLI",
+      "prenom": "Hélène",
       "ville": "Parthenay",
-      "avatar" : "images/avatar.png",
-      "anecdotes" : "",
+      "avatar": "images/avatar.png",
+      "anecdotes": "",
       "coordonnees": {
-        "latitude" : 46.650002,
-        "longitude" : -0.250000
+        "latitude": 46.650002,
+        "longitude": -0.25
       }
     },
+
     {
-      "id" : 4,
-      "nom" : "MARTIN ROY",
-      "prenom" : "Raphaël",
+      "id": 4,
+      "nom": "MARTIN ROY",
+      "prenom": "Raphaël",
       "ville": "Saint-Saturnin-du-Bois",
-      "avatar" : "images/avatar.png",
-      "anecdotes" : "",
+      "avatar": "images/avatar.png",
+      "anecdotes": "",
       "coordonnees": {
-        "latitude" : 46.133331,
-        "longitude" : -0.666670
+        "latitude": 46.133331,
+        "longitude": -0.66667
       }
     },
+
     {
-      "id" : 5,
-      "nom" : "GUILLET",
-      "prenom" : "Alizée",
+      "id": 5,
+      "nom": "GUILLET",
+      "prenom": "Alizée",
       "ville": "Nantes",
-      "avatar" : "images/avatar.png",
-      "anecdotes" : "",
+      "avatar": "images/avatar.png",
+      "anecdotes": "",
       "coordonnees": {
         "latitude": 47.2173,
         "longitude": -1.5534
       }
     },
+
     {
-      "id" : 6,
-      "nom" : "HOBLOS",
-      "prenom" : "Ritta",
+      "id": 6,
+      "nom": "HOBLOS",
+      "prenom": "Ritta",
       "ville": "Etampes",
-      "avatar" : "images/avatar.png",
-      "anecdotes" : "",
+      "avatar": "images/avatar.png",
+      "anecdotes": "",
       "coordonnees": {
-        "latitude" : 48.433331,
-        "longitude" : 2.150000
+        "latitude": 48.433331,
+        "longitude": 2.15
       }
     }
-
   ]
 }
