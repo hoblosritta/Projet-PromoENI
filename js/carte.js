@@ -74,3 +74,4 @@ fetch("../promo.json")
             });
         }
     });
+    
